@@ -5,7 +5,7 @@ title: Power Budget
 ## Overview
 Write a overview of what you did and why you did a Power Budget.
 
-> Capture your power budge as a image to display. Take time to get clean breaks and a well organized layout.
+> Capture your power budget as a image to display. Take time to get clean breaks and a well organized layout.
 
 ![budget1](budgetPg1.png){style width:"350" height:"300;"}
 
@@ -17,6 +17,6 @@ Write a overview of what you did and why you did a Power Budget.
 
 From the prepare Power Budget, .....
 
-## Resouces
+## Resources
 
 The power budget as a PDF download is available [*here*](PowerBudgetExample.pdf), and a Microsoft Excel Sheet [*here*](PowerBudgetExample.xlsx).
