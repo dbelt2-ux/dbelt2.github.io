@@ -26,7 +26,7 @@
 
     
       
-        <title>Individal Block Diagram - EGR 304 (Donovan Belt) Data Sheet</title>
+        <title>Individual Block Diagram - EGR 304 (Donovan Belt) Data Sheet</title>
       
     
     
@@ -125,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Individal Block Diagram
+              Individual Block Diagram
             
           </span>
         </div>
@@ -471,7 +471,7 @@
           
   
   <span class="md-ellipsis">
-    Individal Block Diagram
+    Individual Block Diagram
   </span>
   
 
@@ -482,7 +482,7 @@
         
   
   <span class="md-ellipsis">
-    Individal Block Diagram
+    Individual Block Diagram
   </span>
   
 
@@ -511,9 +511,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-block-diagram" class="md-nav__link">
+  <a href="#block-diagram" class="md-nav__link">
     <span class="md-ellipsis">
-      Example Block Diagram
+      Block Diagram
     </span>
   </a>
   
@@ -809,9 +809,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-block-diagram" class="md-nav__link">
+  <a href="#block-diagram" class="md-nav__link">
     <span class="md-ellipsis">
-      Example Block Diagram
+      Block Diagram
     </span>
   </a>
   
@@ -840,21 +840,54 @@
   
 
 
-  <h1>Individal Block Diagram</h1>
+  <h1>Individual Block Diagram</h1>
 
 <h2 id="overview">Overview</h2>
-<p>This needs to be updated with a brief purpose for having the block diagram.
-Things to mention are:
-* power levels
-* sensor
-* Actuator
-* team connections
-* Power source
-* ...</p>
-<p>To get some initial formatting help, one can view <a href="https://embedded-systems-design.github.io/EGR304DataSheetTemplate/Appendix/basic-markdown-examples/">"here"</a> some basic techniques.</p>
-<h2 id="example-block-diagram">Example Block Diagram</h2>
-<p>Showing an example of how to import a screenshot of the block diagram created outside of git and brought into a page.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../individual-block-diagram.png" data-desc-position="bottom"><img alt="Example of Indivial Block diagram " src="../individual-block-diagram.png"></a></p>
+<p>This block diagram aims to show the audio subsystem of Team 206's automated pet feeder. It lays out how the hardware on my board is connected, which microcontroller pins and peripherals are going to be used, and how my board communicates with my teammates' boards. It will be updated with final part numbers before the design review.</p>
+<p><strong>Power source:</strong> The subsystem is powered by a 9V, 1A unregulated supply, which feeds a voltage regulator that provides 5V at up to 1.5A.</p>
+<p><strong>Power levels:</strong> All components on the board run from the 5V regulated rail, including the PIC18F57Q43 Curiosity Nano and the audio amplifier. The 9V rail is used only as the input to the regulator.</p>
+<p><strong>Sensors:</strong> This subsystem has no sensors of its own. Its inputs are two digital signals from AJ's board, which tell it when to play a sound.</p>
+<p><strong>Actuator:</strong> An 8 Ω speaker, driven by a class-D audio amplifier. The microcontroller generates tones using its PWM1 peripheral on pin RC3. The amplifier boosts that signal and drives the speaker over two pins.</p>
+<p><strong>Team connections:</strong> My board connects only to AJ's board, which acts as the hub of our team's design. The two boards are linked by an 8-pin ribbon cable:</p>
+<table>
+<thead>
+<tr>
+<th>Ribbon Pin</th>
+<th>Direction</th>
+<th>My MCU Pin</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>AJ → Donovan</td>
+<td>RB0</td>
+<td>Play feeding chime</td>
+</tr>
+<tr>
+<td>2</td>
+<td>AJ → Donovan</td>
+<td>RB1</td>
+<td>Play alert tone</td>
+</tr>
+<tr>
+<td>3–7</td>
+<td>—</td>
+<td>—</td>
+<td>Unused</td>
+</tr>
+<tr>
+<td>8</td>
+<td>—</td>
+<td>GND</td>
+<td>Shared ground</td>
+</tr>
+</tbody>
+</table>
+<p>Both signals are 5V digital, one pin each. Every ribbon cable pin connects directly to a microcontroller pin, not to a sensor or actuator.</p>
+<h2 id="block-diagram">Block Diagram</h2>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/user-attachments/assets/dc877aa0-0e9e-4fed-ac5b-dcb893f8deec" data-desc-position="bottom"><img width="617" height="750" alt="Donovan_Block_Diagram drawio" src="https://github.com/user-attachments/assets/dc877aa0-0e9e-4fed-ac5b-dcb893f8deec"></a></p>
 
 
 
