@@ -695,18 +695,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#conclusions" class="md-nav__link">
+  <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
-      Conclusions
+      Summary
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#resources" class="md-nav__link">
+  <a href="#calculations" class="md-nav__link">
     <span class="md-ellipsis">
-      Resources
+      Calculations
     </span>
   </a>
   
@@ -818,18 +818,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#conclusions" class="md-nav__link">
+  <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
-      Conclusions
+      Summary
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#resources" class="md-nav__link">
+  <a href="#calculations" class="md-nav__link">
     <span class="md-ellipsis">
-      Resources
+      Calculations
     </span>
   </a>
   
@@ -861,17 +861,50 @@
   <h1>Power Budget</h1>
 
 <h2 id="overview">Overview</h2>
-<p>Write a overview of what you did and why you did a Power Budget.</p>
-<blockquote>
-<p>Capture your power budget as a image to display. Take time to get clean breaks and a well organized layout.</p>
-</blockquote>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../budgetPg1.png" data-desc-position="bottom"><img alt="budget1" height:_300_="height:&quot;300;&quot;" src="../budgetPg1.png" style="style" width:_350_="width:&quot;350&quot;"></a></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../budgetPg2.png" data-desc-position="bottom"><img alt="budget2" height:_300_="height:&quot;300;&quot;" src="../budgetPg2.png" style="style" width:_350_="width:&quot;350&quot;"></a></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../budgetPg3.png" data-desc-position="bottom"><img alt="budget3" height:_300_="height:&quot;300;&quot;" src="../budgetPg3.png" style="style" width:_350_="width:&quot;350&quot;"></a></p>
-<h2 id="conclusions">Conclusions</h2>
-<p>From the prepare Power Budget, .....</p>
-<h2 id="resources">Resources</h2>
-<p>The power budget as a PDF download is available <a href="../PowerBudgetExample.pdf"><em>here</em></a>, and a Microsoft Excel Sheet <a href="../PowerBudgetExample.xlsx"><em>here</em></a>.</p>
+<p>This power budget checks that the selected regulator and power supply can power every major component in my audio subsystem at the same time, with a 25% safety margin. It follows the class power budget template. Current values come from each component's datasheet, using maximum or worst-case values.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/user-attachments/assets/92a67e8b-dfc4-4fa4-8b1c-953df9e8dfab" data-desc-position="bottom"><img width="1258" height="629" alt="Screenshot 2026-10-16 171822" src="https://github.com/user-attachments/assets/92a67e8b-dfc4-4fa4-8b1c-953df9e8dfab"></a>
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/user-attachments/assets/f296ef9c-218d-4bf9-b8b0-e2c0066b314a" data-desc-position="bottom"><img width="1255" height="512" alt="Screenshot 2026-10-16 171841" src="https://github.com/user-attachments/assets/f296ef9c-218d-4bf9-b8b0-e2c0066b314a"></a></p>
+<h2 id="summary">Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Power rails</td>
+<td>One 5V regulated rail</td>
+</tr>
+<tr>
+<td>Total current on 5V rail (with 25% margin)</td>
+<td>514 mA</td>
+</tr>
+<tr>
+<td>5V regulator</td>
+<td>Murata OKI-78SR-5/1.5-W36-C, 1500 mA. <strong>986 mA remaining</strong></td>
+</tr>
+<tr>
+<td>External power source</td>
+<td>Adafruit 63, 9V 1000 mA wall adapter. <strong>683 mA remaining</strong></td>
+</tr>
+<tr>
+<td>Battery life</td>
+<td>Not applicable (wall supply)</td>
+</tr>
+</tbody>
+</table>
+<p>Both "remaining current" values are positive, so the regulator and wall supply can power the whole subsystem at worst-case load.</p>
+<h2 id="calculations">Calculations</h2>
+<ul>
+<li><strong>Speaker current:</strong> The speaker draws its power through the amplifier, the same way a motor draws current through its motor driver. At the PAM8302A's maximum output of 1.5 W into 8 Ω at 85% efficiency: 1.5 W ÷ 0.85 ÷ 5V = <strong>353 mA</strong>.</li>
+<li><strong>5V rail total:</strong> 50 mA (Curiosity Nano) + 8 mA (amplifier) + 353 mA (speaker) = 411 mA. With the 25% margin: 411 × 1.25 = <strong>514 mA</strong>.</li>
+<li><strong>Current drawn from the 9V supply:</strong> The OKI-78SR is a switching regulator, about 90% efficient. 5V × 0.514 A ÷ 0.90 ÷ 9V = <strong>317 mA</strong>.</li>
+<li><strong>Curiosity Nano current:</strong> 50 mA is a conservative estimate (MCU core at 64 MHz plus I/O) and will be checked against the PIC18F57Q43 datasheet.</li>
+<li><strong>Powering the Curiosity Nano:</strong> 5V is applied to the VTG pin with VOFF tied to GND, which disables the board's own regulator. The maximum VTG voltage is 5.5V.</li>
+</ul>
+<p>For comparison, a 9V alkaline battery (Energizer 522, about 600 mAh) would last only about 600 ÷ 317 ≈ <strong>1.9 hours</strong> at worst-case load, which is why a wall supply was chosen. Full regulator and power supply comparisons are on the Component Selection page.</p>
 
 
 
