@@ -952,7 +952,7 @@
 <tr>
 <td><img width="635" height="486" alt="Screenshot 2026-10-16 162821" src="https://github.com/user-attachments/assets/1d0b2886-fd86-4d65-a396-79448650ba90" /> <strong>Option 3:</strong> <a href="https://www.digikey.com/en/products/detail/texas-instruments/LM386N-1-NOPB/6284">Texas Instruments LM386N-1/NOPB class-AB amplifier (DIP-8)</a> <br> $1.18 / each</td>
 <td>• Through-hole DIP-8, very easy to solder and breadboard <br> • Classic, widely used part with many example circuits <br> • Low cost</td>
-<td>• Only about 325 mW output at 5V, which may be too quiet <br> • Class-AB is much less efficient, so more power is wasted as heat <br> • Needs a large output coupling capacitor (about 250 µF) <br> • Minimum supply of 4V leaves little headroom on a 5V rail</td>
+<td>• Lower output (about 325 mW) than the class-D options, though enough for short chimes and alert tones <br> • Class-AB is much less efficient, so more power is wasted as heat <br> • Needs a large output coupling capacitor (220 µF on my board) <br> • Minimum supply of 4V leaves little headroom on a 5V rail</td>
 </tr>
 <tr>
 <td>Solution</td>
@@ -993,7 +993,7 @@
 <tr>
 <td><img width="639" height="635" alt="Screenshot 2026-10-16 163531" src="https://github.com/user-attachments/assets/9c2caec5-a788-4f2e-b0a8-66886f98ece4" /> <strong>Option 2:</strong> <a href="https://www.digikey.com/en/products/detail/adafruit-industries-llc/3923/9658610">Adafruit 3923 Mini Oval Speaker – 8 Ω 1 W</a> <br> $2.60 / each</td>
 <td>• 8 Ω, 1 W, a good match for the amplifier <br> • Comes with a pre-attached 2-pin cable (Molex PicoBlade) <br> • Low cost and compact</td>
-<td>• Less detailed specifications (no published SPL or frequency response) <br> • The amp can deliver 1.5 W, which is above this speaker's 1 W rating, so the volume must be limited <br> • Connector needs a matching header on the PCB, or the wires must be cut</td>
+<td>• Less detailed specifications (no published SPL or frequency response) <br> • Less detailed datasheet makes it harder to verify loudness <br> • Connector needs a matching header on the PCB, or the wires must be cut</td>
 </tr>
 <tr>
 <td>Solution</td>
@@ -1003,12 +1003,12 @@
 <tr>
 <td><img width="817" height="565" alt="Screenshot 2026-10-16 163858" src="https://github.com/user-attachments/assets/35e72181-7283-4983-901e-3de846bfc913" /> <strong>Option 3:</strong> <a href="https://www.adafruit.com/product/1314">Adafruit 1314 Speaker – 3" diameter, 4 Ω 3 W</a> <br> $1.95 / each</td>
 <td>• Lowest cost <br> • Larger cone gives fuller, louder sound <br> • 3 W rating can't be overdriven by the amp</td>
-<td>• 4 Ω load makes the amp draw much more current (up to 2.5 W out, roughly 0.6 A from 5V) <br> • 3" diameter is bulky inside the feeder <br> • Not RoHS compliant <br> • Minimal datasheet</td>
+<td>• 4 Ω load roughly doubles the LM386's output current and increases distortion; the LM386 is rated for 8 Ω <br> • 3" diameter is bulky inside the feeder <br> • Not RoHS compliant <br> • Minimal datasheet</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Choice:</strong> Option 1, the PUI Audio AS04008PO-2-R</p>
-<p><strong>Rationale:</strong> The 8 Ω impedance pairs with the PAM8302A to keep the amplifier's maximum current around 0.35 A. With the 4 Ω speaker it would be about 0.6 A, which would put a much larger load on my regulator and power supply. Its 2 W maximum input rating is above the amplifier's 1.5 W maximum output, so the speaker can't be damaged at full volume. The Adafruit mini oval speaker could be damaged at full volume, since its rating is 1 W. At 84 dB SPL it is loud enough to get a pet's attention across a room, and its small 40 × 28 mm size fits inside the feeder. It costs more than the other two options, but at $3.57 the difference is small, and it has the most complete datasheet for designing the board.</p>
+<p><strong>Rationale:</strong> The 8 Ω impedance matches the LM386’s rated load. Its 1 W rating (2 W maximum) is about three times the LM386’s 325 mW output, so it can never be overdriven. At 84 dB SPL it is loud enough to get a pet’s attention across a room, and its small 40 × 28 mm size fits inside the feeder. It costs a little more than the Adafruit options, but it has the most complete datasheet for designing the board.</p>
 <hr />
 <h2 id="voltage-regulator-5v-rail">Voltage Regulator (5V Rail)</h2>
 <p><strong>Individual Subsystem: Audio</strong></p>
