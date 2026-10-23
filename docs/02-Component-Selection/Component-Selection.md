@@ -34,9 +34,9 @@ All of the components on this page belong to my individual subsystem: **Audio**.
 | Solution | Pros | Cons |
 | **Option 4 (custom):** Single NPN transistor speaker driver (e.g., 2N3904 + base resistor) <br> < $0.50 in parts | • Extremely cheap and simple <br> • All through-hole, easy to build <br> • Fine for basic beeps driven straight from PWM | • No real amplification of tone quality; output is a harsh square wave <br> • No protection, so a shorted speaker can damage the transistor <br> • Difficult to control volume <br> • Needs a flyback diode and current-limiting resistor, which adds design work |
 
-**Choice:** Option 1, the Diodes Inc. PAM8302AADCR
+**Choice:** Option 3, the Texas Instruments LM386N-1/NOPB
 
-**Rationale:** The PAM8302A gives the most output power (1.5 W into 8 Ω) at the lowest cost ($ 0.62), and it runs directly from my 5V rail. Because it is class-D, it is about 85% efficient, which keeps both the heat and the current draw from the regulator low. The shutdown pin lets the PIC disable the amplifier when no sound is playing, which reduces idle power and stops hiss from the speaker. The LM386 is easier to solder but only produces about a fifth of the output power. The TPA2005D1 costs more and comes in a harder-to-solder package. I chose the SO-8 version (PAM8302AADCR) instead of the MSOP-8 version because the larger pins are easier to hand-solder. For early breadboard testing, the [Adafruit PAM8302 breakout board](https://www.digikey.com/en/products/detail/adafruit-industries-llc/2130/5761279) ($3.95) uses the same chip, so my code and circuit will carry over to the PCB.
+**Rationale:** The LM386 is a through-hole DIP-8 part, so the same chip works on the breadboard and on my PCB, and it can sit in an IC socket so a damaged chip is easy to replace. My subsystem only plays short feeding chimes and alert tones, so its output of about 325 mW into 8 Ω is loud enough. Its very common design is well documented, which lowers the risk for my first PCB. It is also inexpensive ($1.18), and its maximum quiescent current is only 8 mA. The PAM8302A and TPA2005D1 give more power, but both are surface-mount only and would need a separate breakout board for prototyping. Their class-D switching output also requires more careful PCB layout.
 
 ---
 
