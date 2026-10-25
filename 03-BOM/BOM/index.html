@@ -596,18 +596,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bill-of-materials-example-as-table" class="md-nav__link">
+  <a href="#purchased-from-digikey" class="md-nav__link">
     <span class="md-ellipsis">
-      Bill of Materials Example (as Table)
+      Purchased from DigiKey
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bill-of-materials-example-as-image" class="md-nav__link">
+  <a href="#from-peralta-109-stock-class-kit-or-team" class="md-nav__link">
     <span class="md-ellipsis">
-      Bill of Materials Example (as Image)
+      From Peralta 109 Stock, Class Kit, or Team
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datasheets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Datasheets
     </span>
   </a>
   
@@ -811,18 +820,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bill-of-materials-example-as-table" class="md-nav__link">
+  <a href="#purchased-from-digikey" class="md-nav__link">
     <span class="md-ellipsis">
-      Bill of Materials Example (as Table)
+      Purchased from DigiKey
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bill-of-materials-example-as-image" class="md-nav__link">
+  <a href="#from-peralta-109-stock-class-kit-or-team" class="md-nav__link">
     <span class="md-ellipsis">
-      Bill of Materials Example (as Image)
+      From Peralta 109 Stock, Class Kit, or Team
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datasheets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Datasheets
     </span>
   </a>
   
@@ -854,56 +872,356 @@
   <h1>Bill of Materials</h1>
 
 <h2 id="overview">Overview</h2>
-<p>written context</p>
-<h2 id="bill-of-materials-example-as-table">Bill of Materials Example (as Table)</h2>
-<p><em>Table ##: An example of one approach to adding your BOM table to this section.</em></p>
+<p>This Bill of Materials lists every component in my audio subsystem schematic (DB_Audio_Subsystem, Rev 1), plus the supporting hardware needed to build and debug the board: IC socket, headers, jumper shunts, test points, heatsink and cabling. Parts are grouped by supplier. Order quantities cover one breadboard prototype, one PCB and 1–2 spares per part. Parts available in Peralta 109 or handed out in class are listed but not purchased.</p>
+<ul>
+<li><strong>DigiKey order:</strong> 13 line items, <strong>$50.81</strong> subtotal</li>
+<li><strong>Purchased parts cost per board:</strong> $16.98</li>
+</ul>
+<h2 id="purchased-from-digikey">Purchased from DigiKey</h2>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;"><strong>Part Name/Description</strong></th>
-<th style="text-align: left;"><strong>Qty</strong></th>
-<th style="text-align: left;"><strong>Unit Cost</strong></th>
-<th style="text-align: left;"><strong>Total Cost</strong></th>
-<th style="text-align: left;"><strong>Manufacture</strong></th>
-<th style="text-align: left;"><strong>Manufacturer #</strong></th>
-<th style="text-align: left;"><strong>Vendor Link</strong></th>
-<th style="text-align: left;"><strong>Datasheet Link</strong></th>
-<th style="text-align: left;"><strong>Schematic Reference Designators</strong></th>
+<th>Description</th>
+<th>Qty / Board</th>
+<th>Unit Cost</th>
+<th>Manufacturer</th>
+<th>Mfr Part #</th>
+<th>DigiKey Part #</th>
+<th># Ordered</th>
+<th>Ref Des</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">8-bit SIPO/SISO Shift Register, SOIC-16 package</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">$0.49</td>
-<td style="text-align: left;">$ 0.49</td>
-<td style="text-align: left;">NXP</td>
-<td style="text-align: left;">74HC595D,112</td>
-<td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/nexperia-usa-inc/74HC595D-112/763550">DigiKey</a></td>
-<td style="text-align: left;"><a href="https://assets.nexperia.com/documents/data-sheet/74HC_HCT595.pdf">datasheet link</a></td>
-<td style="text-align: left;">U1</td>
+<td>Audio amplifier IC, 325 mW, 8-pin DIP</td>
+<td>1</td>
+<td>$1.180</td>
+<td>Texas Instruments</td>
+<td>LM386N-1/NOPB</td>
+<td><a href="https://www.digikey.com/en/products/result?keywords=296-44414-5-ND">296-44414-5-ND</a></td>
+<td>3</td>
+<td>U3</td>
 </tr>
 <tr>
-<td style="text-align: left;">0.1 µF Ceramic Capacitor, +/-10%, X7R, 50V, 0805 package</td>
-<td style="text-align: left;">10</td>
-<td style="text-align: left;">0.2750</td>
-<td style="text-align: left;">$2.75</td>
-<td style="text-align: left;">KEMET</td>
-<td style="text-align: left;">C0805F104K5RACTU</td>
-<td style="text-align: left;">PRLTA 109</td>
-<td style="text-align: left;">n/a</td>
-<td style="text-align: left;">C2, C4, C6, C7, C8, C9, C10, C11, C12, C16</td>
+<td>5V 1.5A linear voltage regulator, TO-220</td>
+<td>1</td>
+<td>$1.080</td>
+<td>STMicroelectronics</td>
+<td>L7805CV</td>
+<td><a href="https://www.digikey.com/en/products/result?keywords=497-1443-5-ND">497-1443-5-ND</a></td>
+<td>3</td>
+<td>U1</td>
+</tr>
+<tr>
+<td>Heatsink for TO-220, 24.4 °C/W</td>
+<td>1</td>
+<td>$1.720</td>
+<td>Aavid (Boyd)</td>
+<td>577202B00000G</td>
+<td><a href="https://www.digikey.com/en/products/result?keywords=HS107-ND">HS107-ND</a></td>
+<td>4</td>
+<td>HS1</td>
+</tr>
+<tr>
+<td>Speaker, 8 Ω, 1 W (2 W max), 84 dB, wire leads</td>
+<td>1</td>
+<td>$6.780</td>
+<td>PUI Audio</td>
+<td>AS04008PO-2-WR-R</td>
+<td><a href="https://www.digikey.com/en/products/result?keywords=668-1114-ND">668-1114-ND</a></td>
+<td>2</td>
+<td>J3 (speaker)</td>
+</tr>
+<tr>
+<td>Trimmer potentiometer, 10 kΩ, 0.5 W, top adjust</td>
+<td>1</td>
+<td>$1.820</td>
+<td>Bourns</td>
+<td>3386P-1-103LF</td>
+<td><a href="https://www.digikey.com/en/products/result?keywords=3386P-103LF-ND">3386P-103LF-ND</a></td>
+<td>3</td>
+<td>RV1</td>
+</tr>
+<tr>
+<td>Shrouded box header, 2x4, 2.54 mm, vertical</td>
+<td>1</td>
+<td>$1.030</td>
+<td>Würth Elektronik</td>
+<td>61200821621</td>
+<td><a href="https://www.digikey.com/en/products/result?keywords=732-5395-ND">732-5395-ND</a></td>
+<td>3</td>
+<td>J2</td>
+</tr>
+<tr>
+<td>PCB test point, miniature, red</td>
+<td>3</td>
+<td>$0.263</td>
+<td>Keystone</td>
+<td>5000</td>
+<td><a href="https://www.digikey.com/en/products/result?keywords=36-5000-ND">36-5000-ND</a></td>
+<td>12</td>
+<td>TP1, TP3, TP4</td>
+</tr>
+<tr>
+<td>PCB test point, miniature, black</td>
+<td>1</td>
+<td>$0.270</td>
+<td>Keystone</td>
+<td>5001</td>
+<td><a href="https://www.digikey.com/en/products/result?keywords=36-5001-ND">36-5001-ND</a></td>
+<td>4</td>
+<td>TP2</td>
+</tr>
+<tr>
+<td>Aluminum electrolytic capacitor, 220 µF, 25V, 8×11.5 mm</td>
+<td>1</td>
+<td>$0.370</td>
+<td>Nichicon</td>
+<td>UVR1E221MPD</td>
+<td><a href="https://www.digikey.com/en/products/result?keywords=493-1062-ND">493-1062-ND</a></td>
+<td>4</td>
+<td>C7</td>
+</tr>
+<tr>
+<td>Aluminum electrolytic capacitor, 10 µF, 50V, 5×11 mm</td>
+<td>1</td>
+<td>$0.390</td>
+<td>Panasonic</td>
+<td>EEU-FC1H100L</td>
+<td><a href="https://www.digikey.com/en/products/result?keywords=P10316-ND">P10316-ND</a></td>
+<td>4</td>
+<td>C10</td>
+</tr>
+<tr>
+<td>Jumper shunt, 2.54 mm, gold</td>
+<td>2</td>
+<td>$0.029</td>
+<td>Sullins</td>
+<td>QPC02SXGN-RC</td>
+<td><a href="https://www.digikey.com/en/products/result?keywords=S9337-ND">S9337-ND</a></td>
+<td>10</td>
+<td>JP1, JP2</td>
+</tr>
+<tr>
+<td>Ceramic capacitor, 47 nF, 50V, X7R, radial 2.54 mm</td>
+<td>2</td>
+<td>$0.350</td>
+<td>KEMET</td>
+<td>C315C473K5R5TA</td>
+<td><a href="https://www.digikey.com/en/products/result?keywords=399-C315C473K5R5TA-ND">399-C315C473K5R5TA-ND</a></td>
+<td>10</td>
+<td>C4, C8</td>
+</tr>
+<tr>
+<td>Ceramic capacitor, 1 µF, 50V, X7R, radial 5.0 mm</td>
+<td>2</td>
+<td>$0.397</td>
+<td>TDK</td>
+<td>FK20X7R1H105KN000</td>
+<td><a href="https://www.digikey.com/en/products/result?keywords=445-FK20X7R1H105KN000-ND">445-FK20X7R1H105KN000-ND</a></td>
+<td>10</td>
+<td>C1, C5</td>
 </tr>
 </tbody>
 </table>
-<p>Note: Setting it up as a table is nice because it is completely viewable without scaling issues. <ins>Downside</ins> is that you have to do the math.</p>
-<ul>
-<li>You could also import your BOM via a screenshot of the spreadsheet created BOM</li>
-</ul>
-<h2 id="bill-of-materials-example-as-image">Bill of Materials Example (as Image)</h2>
-<p><img _2000_="&quot;2000&quot;" alt="" src="../BOM-Screenshot.png" style="style" width:="width:" />
-<strong>Figure 2:</strong> Example Bill of Materials as a screenshot.</p>
-<p>As you can see, the text can be difficult to read without opening the image.</p>
+<p><strong>DigiKey subtotal: $50.81</strong></p>
+<h2 id="from-peralta-109-stock-class-kit-or-team">From Peralta 109 Stock, Class Kit, or Team</h2>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Qty / Board</th>
+<th>Manufacturer</th>
+<th>Mfr Part #</th>
+<th>Supplier</th>
+<th>Qty Needed</th>
+<th>Ref Des</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ceramic capacitor, 0.1 µF, 50V, X7R, radial 5 mm</td>
+<td>4</td>
+<td>Vishay</td>
+<td>K104K10X7RF5UH5</td>
+<td>PRLTA 109</td>
+<td>8</td>
+<td>C2, C3, C6, C9</td>
+</tr>
+<tr>
+<td>Resistor, 1 kΩ, 1/4 W, axial</td>
+<td>2</td>
+<td>—</td>
+<td>—</td>
+<td>Class kit</td>
+<td>4</td>
+<td>R1, R5</td>
+</tr>
+<tr>
+<td>Resistor, 10 Ω, 1/4 W, axial</td>
+<td>1</td>
+<td>—</td>
+<td>—</td>
+<td>Class kit</td>
+<td>2</td>
+<td>R2</td>
+</tr>
+<tr>
+<td>Resistor, 330 Ω, 1/4 W, axial</td>
+<td>1</td>
+<td>—</td>
+<td>—</td>
+<td>Class kit</td>
+<td>2</td>
+<td>R3</td>
+</tr>
+<tr>
+<td>Resistor, 10 kΩ, 1/4 W, axial</td>
+<td>1</td>
+<td>—</td>
+<td>—</td>
+<td>Class kit</td>
+<td>2</td>
+<td>R4</td>
+</tr>
+<tr>
+<td>LED, red, 5 mm</td>
+<td>1</td>
+<td>—</td>
+<td>—</td>
+<td>Class kit</td>
+<td>2</td>
+<td>D1</td>
+</tr>
+<tr>
+<td>LED, green, 5 mm</td>
+<td>1</td>
+<td>—</td>
+<td>—</td>
+<td>Class kit</td>
+<td>2</td>
+<td>D2</td>
+</tr>
+<tr>
+<td>Tactile pushbutton, 6 mm</td>
+<td>1</td>
+<td>—</td>
+<td>—</td>
+<td>Class kit</td>
+<td>2</td>
+<td>SW1</td>
+</tr>
+<tr>
+<td>Fuse, 5x20 mm, 1 A</td>
+<td>1</td>
+<td>NTE Electronics</td>
+<td>74-5FG1A</td>
+<td>PRLTA 109</td>
+<td>2</td>
+<td>F1</td>
+</tr>
+<tr>
+<td>Fuse holder, 5x20 mm, PCB mount</td>
+<td>1</td>
+<td>Keystone</td>
+<td>4628</td>
+<td>Class kit</td>
+<td>1</td>
+<td>F1</td>
+</tr>
+<tr>
+<td>DC barrel jack, 2.1 mm</td>
+<td>1</td>
+<td>CUI Devices</td>
+<td>PJ-102AH</td>
+<td>Class kit</td>
+<td>1</td>
+<td>J1</td>
+</tr>
+<tr>
+<td>PIC18F57Q43 Curiosity Nano</td>
+<td>1</td>
+<td>Microchip</td>
+<td>DM164150</td>
+<td>Class kit</td>
+<td>1</td>
+<td>U2</td>
+</tr>
+<tr>
+<td>IC socket, 8-pin DIP</td>
+<td>1</td>
+<td>Assmann WSW</td>
+<td>A-08-LC-TT</td>
+<td>PRLTA 109</td>
+<td>2</td>
+<td>U3 (socket)</td>
+</tr>
+<tr>
+<td>Female header strip, 1x40, 2.54 mm (cut to 1x28)</td>
+<td>2</td>
+<td>—</td>
+<td>—</td>
+<td>PRLTA 109</td>
+<td>4</td>
+<td>U2 (socket)</td>
+</tr>
+<tr>
+<td>Male header strip, 1x40, 2.54 mm (cut to size)</td>
+<td>1</td>
+<td>—</td>
+<td>—</td>
+<td>PRLTA 109</td>
+<td>2</td>
+<td>J3, J4, JP1, JP2</td>
+</tr>
+<tr>
+<td>Male header, 2x12, 2.54 mm (optional, unused GPIO)</td>
+<td>1</td>
+<td>—</td>
+<td>—</td>
+<td>PRLTA 109</td>
+<td>1</td>
+<td>J5</td>
+</tr>
+<tr>
+<td>Female header, 1x2 (speaker wire connector)</td>
+<td>1</td>
+<td>—</td>
+<td>—</td>
+<td>PRLTA 109</td>
+<td>2</td>
+<td>J3 (speaker plug)</td>
+</tr>
+<tr>
+<td>Screw and nut, #4-40 (heatsink mounting)</td>
+<td>1</td>
+<td>—</td>
+<td>—</td>
+<td>PRLTA 109</td>
+<td>2</td>
+<td>HS1</td>
+</tr>
+<tr>
+<td>9V wall power supply</td>
+<td>1</td>
+<td>—</td>
+<td>—</td>
+<td>Class kit</td>
+<td>1</td>
+<td>J1 (power)</td>
+</tr>
+<tr>
+<td>2x4 IDC ribbon cable to teammate's board</td>
+<td>1</td>
+<td>—</td>
+<td>—</td>
+<td>Team</td>
+<td>1</td>
+<td>J2 (cable)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="datasheets">Datasheets</h2>
 
 
 
