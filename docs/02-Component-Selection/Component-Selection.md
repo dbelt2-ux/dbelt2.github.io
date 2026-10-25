@@ -66,13 +66,13 @@ All of the components on this page belong to my individual subsystem: **Audio**.
 |---|---|---|
 | <img width="539" height="500" alt="Screenshot 2026-10-16 163950" src="https://github.com/user-attachments/assets/b4dc94f5-395a-4773-8ba4-3fd7dc409b4a" /> **Option 1:** [Murata OKI-78SR-5/1.5-W36-C switching regulator, 5V 1.5A](https://www.mouser.com/c/?q=OKI-78SR-5%2F1.5-W36-C) <br> $6.00 / each | • Switching regulator, about 90% efficient, so little heat and no heatsink needed <br> • 1.5 A output gives plenty of margin over my about 0.5 A load <br> • Wide 7–36V input works with the 9V supply <br> • Drop-in pin replacement for a 7805 (3-pin through-hole SIP) <br> • Draws less current from the 9V supply than a linear regulator | • About 10× the cost of a 7805 <br> • Switching regulators add some output ripple and noise <br> • Taller package takes more vertical space |
 | Solution | Pros | Cons|
-| <img width="636" height="642" alt="Screenshot 2026-10-16 164355" src="https://github.com/user-attachments/assets/be3f9562-9700-4d84-a39f-54ef5b44fe65" /> **Option 2:** [STMicroelectronics L7805CV linear regulator, 5V 1.5A (TO-220)](https://www.digikey.com/en/products/result?keywords=L7805CV) <br> $0.60 / each | • Very cheap and easy to find <br> • Very simple circuit: only two capacitors needed <br> • Clean, low-noise output <br> • TO-220 through-hole is easy to solder | • Linear: wastes (9V − 5V) × load current as heat, about 2 W at my load <br> • Would need a heatsink to stay within safe temperature <br> • Draws the full load current from the 9V supply, so the supply works harder <br> • 2V dropout |
+| <img width="636" height="642" alt="Screenshot 2026-10-16 164355" src="https://github.com/user-attachments/assets/be3f9562-9700-4d84-a39f-54ef5b44fe65" /> **Option 2:** [STMicroelectronics L7805CV linear regulator, 5V 1.5A (TO-220)](https://www.digikey.com/en/products/result?keywords=L7805CV) <br> $0.60 / each | • Very cheap and easy to find <br> • Very simple circuit: only two capacitors needed <br> • Clean, low-noise output <br> • TO-220 through-hole is easy to solder | • Linear: wastes (9V − 5V) × load current as heat, about 1.8 W at my load <br> • Would need a heatsink to stay within safe temperature <br> • Draws the full load current from the 9V supply, so the supply works harder <br> • 2V dropout |
 | Solution | Pros | Cons |
 | <img width="1083" height="832" alt="Screenshot 2026-10-16 164415" src="https://github.com/user-attachments/assets/e2901568-3cb1-43ae-a300-42cf5241940b" /> **Option 3:** [Pololu D24V10F5 step-down regulator, 5V 1A](https://www.pololu.com/product/2831) <br> $12.95 / each | • 80–93% efficient switching regulator <br> • Very small module (18 × 13 mm) <br> • Very low quiescent current (about 200 µA) <br> • Has an enable pin | • Most expensive option <br> • 1 A output leaves less margin than the 1.5 A options <br> • It's a pre-built module, not a single component, so it takes header space on the PCB |
 
-**Choice:** Option 1, the Murata OKI-78SR-5/1.5-W36-C
+**Choice:** Option 2, the STMicroelectronics L7805CV
 
-**Rationale:** My 5V rail needs about 0.51 A including a 25% safety margin (see the Power Budget page). A linear L7805 would turn about 2 W into heat at that load, enough to need a heatsink, and it would draw the full 0.51 A from the 9V supply. The OKI-78SR is about 90% efficient, so it stays cool without a heatsink and draws only about 0.32 A from the 9V supply. It also matches the 5V 1.5A regulator in my block diagram and uses the same 3-pin layout as a 7805, so the PCB footprint stays simple. The Pololu module also works, but it costs twice as much and has less current margin.
+**Rationale:** My 5V rail needs about 429 mA including a 25% safety margin (see the Power Budget page), well under the L7805’s 1.5 A rating. A linear regulator produces a clean, low-noise output with no switching ripple, which matters for an audio circuit. The L7805 only needs input and output capacitors, comes in an easy-to-solder TO-220 package, and is the cheapest option ($1.08). It does waste about 1.8 W as heat at my worst-case load, so I am adding a TO-220 heatsink and using a 9V supply instead of 12V to keep that heat down. The OKI-78SR would run cooler, but it costs about 5–6× more. The Pololu module costs over 10× more and is a pre-built module instead of a single component.
 
 ---
 
@@ -82,15 +82,15 @@ All of the components on this page belong to my individual subsystem: **Audio**.
 
 | Solution | Pros | Cons |
 |---|---|---|
-| <img width="939" height="583" alt="Screenshot 2026-10-16 164638" src="https://github.com/user-attachments/assets/de8bb2e5-ba14-48d6-bed7-5a29d4fc3059" /> **Option 1:** [Adafruit 63 – 9 VDC 1000 mA regulated switching wall adapter](https://www.adafruit.com/product/63) <br> $8.95 / each | • 9V 1A output matches my block diagram <br> • 1 A is about 3× my estimated 9V-side draw of about 0.32 A <br> • UL listed and regulated <br> • Standard 2.1 mm center-positive barrel plug <br> • Low cost | • Must be plugged into a wall outlet, so the feeder can't run during a power outage <br> • Limited published specs compared to industrial adapters |
+| <img width="939" height="583" alt="Screenshot 2026-10-16 164638" src="https://github.com/user-attachments/assets/de8bb2e5-ba14-48d6-bed7-5a29d4fc3059" /> **Option 1:** [Adafruit 63 – 9 VDC 1000 mA regulated switching wall adapter](https://www.adafruit.com/product/63) <br> $8.95 / each | • 9V 1A output matches my block diagram <br> • 1 A is more than 2× my estimated 9V-side draw of about 0.44 A <br> • UL listed and regulated <br> • Standard 2.1 mm center-positive barrel plug <br> • Low cost | • Must be plugged into a wall outlet, so the feeder can't run during a power outage <br> • Limited published specs compared to industrial adapters |
 | Solution | Pros | Cons |
 | <img width="338" height="368" alt="Screenshot 2026-10-16 164646" src="https://github.com/user-attachments/assets/a9c38a7d-2931-4b15-bdda-e91fa40d6dc0" /> **Option 2:** [CUI / Bel Power SWI12-9-N-P5 9V 1.2A wall adapter](https://www.newark.com/cui/swi12-9-n-p5/adapter-ac-dc-9v-1-2a-rohs-compliant/dp/13AJ1382) <br> $18.11 / each | • 9V at 1.2 A (10.8 W) gives slightly more margin <br> • Detailed manufacturer datasheet <br> • 2.1 × 5.5 mm center-positive barrel plug | • About 2× the cost of Option 1 <br> • Extra current capacity isn't needed for my load |
 | Solution | Pros | Cons |
-| <img width="233" height="227" alt="Screenshot 2026-10-16 164657" src="https://github.com/user-attachments/assets/2b19e82e-3a37-42c0-b7ef-7eb813b55866" /> **Option 3:** [Energizer 522 9V alkaline battery](https://www.jameco.com/z/ALK-9V-522-Energizer-9V-Energizer-reg-Alkaline-Battery_198731.html) <br> $2.95 / each | • Portable; no outlet needed <br> • Keeps working during power outages <br> • Cheapest up-front cost | • Only about 600 mAh, which is about 1.9 hours at my worst-case load <br> • Voltage drops as it discharges <br> • Needs frequent replacement, which is impractical for a pet feeder that runs all day |
+| <img width="233" height="227" alt="Screenshot 2026-10-16 164657" src="https://github.com/user-attachments/assets/2b19e82e-3a37-42c0-b7ef-7eb813b55866" /> **Option 3:** [Energizer 522 9V alkaline battery](https://www.jameco.com/z/ALK-9V-522-Energizer-9V-Energizer-reg-Alkaline-Battery_198731.html) <br> $2.95 / each | • Portable; no outlet needed <br> • Keeps working during power outages <br> • Cheapest up-front cost | • Only about 600 mAh, which is about 1.4 hours at my worst-case load <br> • Voltage drops as it discharges <br> • Needs frequent replacement, which is impractical for a pet feeder that runs all day |
 
 **Choice:** Option 1, the Adafruit 63 9V 1A wall adapter
 
-**Rationale:** A pet feeder runs continuously, so a wall supply makes more sense than a battery. A 9V battery would last only about 2 hours at worst-case load. The Adafruit adapter provides 9V at 1 A, which is about three times the 0.32 A my regulator draws at worst case, so it has plenty of headroom. It is UL listed, uses a standard barrel plug, and costs half as much as the CUI adapter.
+**Rationale:** A pet feeder runs continuously, so a wall supply makes more sense than a battery. A 9V battery would last only about 1.4 hours at worst-case load. The Adafruit adapter provides 9V at 1 A, which is more than twice the 0.44 A my regulator draws at worst case, so it has plenty of headroom. It is UL listed, uses a standard barrel plug, and costs half as much as the CUI adapter. A 9V supply was chosen over 12V because it keeps the L7805's heat lower.
 
 ---
 
@@ -98,10 +98,10 @@ All of the components on this page belong to my individual subsystem: **Audio**.
 
 | Block | Selected Part | Manufacturer | Unit Cost |
 |---|---|---|---|
-| Audio Amplifier | PAM8302AADCR | Diodes Incorporated | $0.62 |
+| Audio Amplifier | LM386N-1/NOPB | Texas Instruments | $1.18 |
 | Speaker | AS04008PO-2-R | PUI Audio | $3.57 |
-| Voltage Regulator | OKI-78SR-5/1.5-W36-C | Murata Power Solutions | $6.00 |
+| Voltage Regulator | L7805CV | STMicroelectronics | $1.08 |
 | Power Supply | 9 VDC 1000 mA adapter (63) | Adafruit | $8.95 |
-| **Total** | | | **$19.14** |
+| **Total** | | | **$14.78** |
 
 *Prices are quantity-1 prices checked in October 2026 and may change.*
