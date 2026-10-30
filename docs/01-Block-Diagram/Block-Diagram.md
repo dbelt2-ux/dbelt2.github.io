@@ -33,5 +33,5 @@ Both signals are 5V digital, one pin each. Every ribbon cable pin connects direc
 ## Block Diagram 
 
 
-<img width="617" height="750" alt="Donovan_Block_Diagram drawio" src="https://github.com/user-attachments/assets/dc877aa0-0e9e-4fed-ac5b-dcb893f8deec" />
+<img width="617" height="751" alt="Donovan_Block_Diagram drawio (1)" src="https://github.com/user-attachments/assets/6fbd3c8a-8eec-4152-a1f5-37b715828492" />
 
