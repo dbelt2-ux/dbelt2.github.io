@@ -58,5 +58,5 @@ This Bill of Materials lists every component in my audio subsystem schematic (DB
 | 2x4 IDC ribbon cable to teammate's board | 1 | — | — | Team | 1 | J2 (cable) |
 
 ## Datasheets
-
+   Datasheets for every part are stored in the [datasheets folder](https://github.com/dbelt2-ux/dbelt2.github.io/tree/main/docs/03-BOM/datasheets) of this repository.
 
