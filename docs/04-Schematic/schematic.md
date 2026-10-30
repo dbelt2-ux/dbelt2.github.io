@@ -19,5 +19,7 @@ This schematic is designed to support the **audio subsystem** of Team 206's pet 
 
 ## Resources
 
-The schematic as a PDF download is available [here](https://github.com/user-attachments/files/33695982/DB_Audio_Subsystem.pdf), and the Zip folder of the project [here](https://github.com/user-attachments/files/33696051/DB_Audio_Subsystem.zip)
+The schematic as a PDF download is available [here](https://github.com/user-attachments/files/34198544/DB_Audio_Subsystem.4.pdf)
+, and the Zip folder of the project [here](https://github.com/user-attachments/files/34203704/DB_Audio_Subsystem1.zip)
+
 .
