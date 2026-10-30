@@ -430,10 +430,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Introduction">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#project-summary" class="md-nav__link">
     <span class="md-ellipsis">
       Project Summary
@@ -441,18 +440,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#my-contribution" class="md-nav__link">
     <span class="md-ellipsis">
       My Contribution
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -781,10 +775,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Introduction">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#project-summary" class="md-nav__link">
     <span class="md-ellipsis">
       Project Summary
@@ -792,18 +785,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#my-contribution" class="md-nav__link">
     <span class="md-ellipsis">
       My Contribution
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -841,21 +829,25 @@ for<br>
 <p><strong>Submission: December, 07, 2026</strong>
 </center></p>
 <h2 id="introduction">Introduction</h2>
+<p>This datasheet documents my individual subsystem for Team 206's Automatic Pet Feeder: the <strong>audio subsystem</strong>. It covers how the subsystem was designed, from the block diagram and component selection through the power budget, schematic and bill of materials, so a reader can understand what the board does, how it connects to the rest of the team's system, and how it was built.</p>
+<h2 id="project-summary">Project Summary</h2>
+<p>The Automatic Pet Feeder dispenses food on a schedule, monitors how much food is left, and alerts the owner and the pet with light and sound. The system is split across three boards, each controlled by its own PIC18F57Q43 Curiosity Nano and connected by 8-pin ribbon cables:</p>
 <ul>
-<li>This needs to be updated so that a reader gets an idea of the purpose of this datasheet.</li>
+<li><strong>Justin Gonzalez – Sensing &amp; User Input:</strong> Photoresistors that detect the food level, plus pushbuttons for user input.</li>
+<li><strong>AJ Bowers – Motor Control (hub):</strong> Color sensors and two motors with H-bridge drivers that dispense the food. AJ's board connects to both other boards.</li>
+<li><strong>Donovan Belt – Audio:</strong> Plays a feeding chime and alert tones through a speaker.</li>
 </ul>
-<h3 id="project-summary">Project Summary</h3>
+<p>My board receives two digital signals from AJ's board over the ribbon cable, one for a feeding chime and one for an alert. The PIC generates the tone with PWM, and an LM386 amplifier drives an 8 Ω speaker. This gives the feeder an audible cue when food is dispensed or when the food level is low.</p>
+<p>For the full team design, see the <a href="https://asu-egr304-2026-f-206.github.io/">team report</a>.</p>
+<h2 id="my-contribution">My Contribution</h2>
+<p>I designed, documented and will build the audio subsystem. Each section of this datasheet covers one stage of that work:</p>
 <ul>
-<li>This needs to be updated to reflect <ins>your version</ins> of the team project, so when shared not via the team's report, the reader gets an idea of the direction of the project and how your work will contribute to the overall success.</li>
-<li>Add context that ties into the link to your <a href="https://embedded-systems-design.github.io/EGR304TeamTemplate/">team report.</a></li>
+<li>Block Diagram: How my board is laid out and how it connects to AJ's board</li>
+<li>Component Selection: The options compared for each major part, and why I chose the LM386 amplifier, PUI Audio speaker, L7805 regulator and 9V wall supply</li>
+<li>Power Budget: Current draw on the 5V rail and confirmation that the regulator and supply can handle it</li>
+<li>Schematic: The full circuit for the audio board</li>
+<li>Bill of Materials: Every part on the board, where it comes from, and its datasheet</li>
 </ul>
-<h3 id="my-contribution">My Contribution</h3>
-<ul>
-<li>This needs to be updated to reflect a team introduction</li>
-<li>Content should also help an unfamiliar reader navigate to areas of interest. Information like:</li>
-</ul>
-<p>To review the details listed of the material used to construct the subsection, you can review it in the <a href="https://embedded-systems-design.github.io/EGR304DataSheetTemplate/03-BOM/BOM/">"BOM"</a> section of the datasheet.</p>
-<p>For all the sections</p>
 
 
 
