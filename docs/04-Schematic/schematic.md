@@ -12,7 +12,8 @@ This schematic is designed to support the **audio subsystem** of Team 206's pet 
 
 **Debug and expansion:** A red debug LED (RD3), a hardware-debounced push button with a 10 kΩ pull-up (RD4), four test points (+5 V, GND, AUDIO_PWM, amplifier output), an 8-pin expansion header, and a 2x12 header that breaks out all unused GPIO pins.
 
-<img width="1236" height="872" alt="Screenshot 2026-10-30 153902" src="https://github.com/user-attachments/assets/e1197e47-064a-4d10-877c-28565a10be41" />
+<img width="3508" height="2481" alt="DB_Audio_Schematic" src="https://github.com/user-attachments/assets/579c2543-cee5-40ad-9f11-78480fea53ef" />
+
 
 
 
@@ -20,7 +21,10 @@ This schematic is designed to support the **audio subsystem** of Team 206's pet 
 
 ## Resources
 
-The schematic as a PDF download is available [here](https://github.com/user-attachments/files/34198544/DB_Audio_Subsystem.4.pdf)
-, and the Zip folder of the project [here](https://github.com/user-attachments/files/34203704/DB_Audio_Subsystem1.zip)
+The schematic as a PDF download is available [here](https://github.com/user-attachments/files/34602866/DB_Audio_Schematic.pdf)
+
+
+, and the Zip folder of the project [here](https://github.com/user-attachments/files/34602807/DB_Audio_Subsystem3.zip)
+
 
 .
